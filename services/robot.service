@@ -1,0 +1,17 @@
+[Unit]
+Description=Robot Program
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/slickwarren/Github/pi-robots/python/single_motor_test.py
+WorkingDirectory=/home/slickwarren/Github/pi-robots/python
+StandardOutput=tty
+StandardError=tty
+Restart=always
+User=slickwarren
+Group=slickwarren
+
+[Install]
+WantedBy=multi-user.target
+
+
