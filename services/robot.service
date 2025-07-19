@@ -3,13 +3,15 @@ Description=Robot Program
 After=multi-user.target
 
 [Service]
-ExecStart=/usr/bin/python3 /home/slickwarren/Github/pi-robots/python/single_motor_test.py
+ExecStart=/usr/bin/python3 /home/slickwarren/Github/pi-robots/python/ultrasonic.py
 WorkingDirectory=/home/slickwarren/Github/pi-robots/python
-StandardOutput=tty
-StandardError=tty
-Restart=always
+StandardOutput=journal
+StandardError=journal
+Restart=on-failure
 User=slickwarren
 Group=slickwarren
+RestartSec=3
+Environment=PYTHONUNBUFFERED=1
 
 [Install]
 WantedBy=multi-user.target
